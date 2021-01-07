@@ -1,0 +1,78 @@
+type Mutation {
+  """
+      ### Create ModuleName
+      ---
+      #### Enums
+      ```
+
+      ```
+      ---
+
+      #### * Request Body :
+      ```javascript
+      mutation {
+      moduleNameCreate(
+            input:{
+              name:"test moduleName",
+              description:"",
+              moduleName_status:1
+              moduleName_type:1
+            }
+      ){
+        id
+        created_by
+
+        created_at
+        updated_at
+      }
+  }
+
+  ```
+  """
+  moduleNameCreate(input: ModuleNameIn): ModuleName @userAuth
+
+  """
+  ### Update ModuleName
+  ---
+  #### * Request Body :
+  ```javascript
+  mutation {
+    moduleNameUpdate(
+          input:{
+            itemId:1,
+            item:{
+              name:"test moduleName",
+              description:"",
+              moduleName_status:1
+              moduleName_type:2
+            }
+          }
+    ){
+      id
+      update_status
+      updated_at
+    }
+  }
+
+  ```
+  """
+  moduleNameUpdate(input: ModuleNameUpdateIn): CommUpdateOut @userAuth
+
+  """
+  ### Delete ModuleName
+  ---
+  #### * Request Body :
+  ```javascript
+  mutation {
+      moduleNameDelete(
+        itemId:2
+      ){
+        id
+        delete_status
+    }
+  }
+
+  ```
+  """
+  moduleNameDelete(itemId: Int): CommDeletedOut @userAuth
+}

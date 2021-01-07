@@ -1,0 +1,12 @@
+[
+  {
+    "label":"ComponentTemplate",
+    "replacements":[
+      {
+        "replacingText" : "ComponentTemplate",
+        "replacingCaseTypes": 4 ,
+        "replacingLocations": [1,2,3]
+      }
+    ]
+  }
+]

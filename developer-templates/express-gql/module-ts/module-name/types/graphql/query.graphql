@@ -1,0 +1,87 @@
+type Query {
+  """
+    ### Get ModuleName
+    ---
+    #### * Request Body :
+    ```javascript
+   query {
+    moduleNameGet(
+          moduleName_id :18
+    ){
+      moduleName{
+        id
+        created_by
+
+        created_at
+        updated_at
+      }
+    permission{
+       id
+      created_by
+
+      created_at
+      updated_at
+    }
+    }
+  }
+
+    ```
+  """
+  moduleNameGet(moduleName_id: Int): ModuleNameOut @userAuth
+
+  """
+  ### Recent ModuleNames
+  ---
+
+  #### * Request Body :
+  ```javascript
+  query {
+  moduleNameRecentList{
+        id
+        created_by
+
+        created_at
+        updated_at
+    }
+  }
+
+  ```
+  """
+  moduleNameRecentList: [ModuleName] @userAuth
+
+  """
+  ### Search ModuleNames
+  ---
+  #### * Request Body :
+  ```javascript
+  query {
+  moduleNameSearch(
+    moduleName_status:-1,
+    moduleName_type:-1,
+    keyword : "",
+    limit: 10,
+    skip: 0,
+  ){
+      limit
+      skip
+      resultCount
+      result{
+      id
+      created_by
+
+      created_at
+      updated_at
+      }
+    }
+  }
+
+  ```
+  """
+  moduleNameSearch(
+    moduleName_status: Int
+    moduleName_type: Int
+    keyword: String
+    limit: Int
+    skip: Int
+  ): ModuleNameSearchOut @userAuth
+}

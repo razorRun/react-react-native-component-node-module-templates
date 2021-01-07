@@ -1,0 +1,16 @@
+{
+  "name": "react-react-native-component-node-module-templates",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/razorRun/react-react-native-component-node-module-templates",
+  "author": "Roshan Milinda",
+  "license": "MIT",
+  "dependencies": {
+    "change-case": "^4.1.2",
+    "ncp": "^2.0.0",
+    "prompts": "^2.4.0",
+    "renamer": "^2.0.1",
+    "replace-in-files": "^3.0.0",
+    "shelljs": "^0.8.4"
+  }
+}

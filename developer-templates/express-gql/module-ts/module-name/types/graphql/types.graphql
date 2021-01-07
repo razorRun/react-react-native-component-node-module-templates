@@ -1,0 +1,39 @@
+type ModuleName {
+  id: Int
+  created_by: Int
+
+  created_at: String
+  updated_at: String
+}
+input ModuleNameIn {
+  name: String
+
+  description: String
+
+  moduleName_status: Int
+  moduleName_type: Int
+}
+input ModuleNameUpdateIn {
+  itemId: Int
+  item: ModuleNameIn
+}
+
+type ModuleNameSearchOutItem {
+  id: Int
+  created_by: Int
+
+  created_at: String
+  updated_at: String
+}
+
+type ModuleNameSearchOut {
+  limit: Int
+  skip: Int
+  resultCount: Int
+  result: [ModuleNameSearchOutItem]
+}
+
+type ModuleNameOut {
+  moduleName: ModuleName
+  permission: ModuleNamePermission
+}

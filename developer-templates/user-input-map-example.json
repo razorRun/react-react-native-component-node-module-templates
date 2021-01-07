@@ -1,0 +1,32 @@
+[
+  {
+    "label":"UserInput1",
+    "replacements":[
+      {
+        "replacingText" : "ModuleNameA",
+        "replacingCaseTypes": 1 ,
+        "replacingLocations": [1,3]
+      },
+      {
+        "replacingText" : "ModuleNameB",
+        "replacingCaseTypes": 2 ,
+        "replacingLocations": [2,3]
+      }
+    ]
+  },
+  {
+    "label":"UserInput2",
+    "replacements":[
+      {
+        "replacingText" : "ModuleNameC",
+        "replacingCaseTypes": 1 ,
+        "replacingLocations": [1,3]
+      },
+      {
+        "replacingText" : "ModuleNameD",
+        "replacingCaseTypes": 2 ,
+        "replacingLocations": [2,3]
+      }
+    ]
+  }
+]
