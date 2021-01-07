@@ -4,7 +4,6 @@ const ncp = require('ncp').ncp;
 const changeCase = require('change-case');
 const shell = require('shelljs');
 const replaceInFiles = require('replace-in-files');
-
 ncp.limit = 16;
 
 let destinationPath = "";
@@ -44,9 +43,10 @@ const  locationSelector = async (path)=>{
 //prompt user to select tech stack and save it to a config file
 const stackTypeSelector = async (path)=> {
     path= path ? path:__dirname+"/developer-templates";
-    let techStack = ""
+    console.log("stackTypeSelector",path);
+    console.log(__dirname)
     try {
-        return JSON.parse(fs.readFileSync("developer-templates/input.json")).techStack;
+        return JSON.parse(fs.readFileSync(__dirname+"developer-templates/config.json")).techStack;
     }catch (e) {
         let folderList = getFolderList(path);
         const response = await prompts({
@@ -55,7 +55,7 @@ const stackTypeSelector = async (path)=> {
             message: 'Select your Project stack',
             choices: folderList
         });
-        fs.writeFile ("developer-templates/input.json", JSON.stringify(response), function(err) {
+        fs.writeFile ("developer-templates/config.json", JSON.stringify(response), function(err) {
                 if (err) throw err;
                 console.log('Response was saved to /developer-templates/config.json. Delete this file if you want to change it later.');
             }
@@ -69,6 +69,7 @@ const templateSelector = async (path)=> {
     const techStack = await stackTypeSelector();
     console.log ("Available templates for " +techStack);
     path = path ? path:__dirname+"/developer-templates/"+techStack;
+    console.log("templateSelector",path)
     let folderList = getFolderList(path);
     const response = await prompts({
         type: 'autocomplete',
