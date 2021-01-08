@@ -117,12 +117,12 @@ const generateTaskList = (userInputRequests,responses) => {
 
 const folderNameReplaceHandler = (originalValue,newValue,path) =>{
     console.log("Folder Names => ",originalValue," to", newValue);
-    shell.exec('cd '+path+' && pwd &&'+__dirname+'/../../node_modules/.bin/renamer --find /'+originalValue+'/i --replace "'+newValue+'" "**/"');
+    shell.exec('cd '+path+' &&'+__dirname+'/../../node_modules/.bin/renamer --find /'+originalValue+'/i --replace "'+newValue+'" "**/"');
 }
 
 const fileNameReplaceHandler = (originalValue,newValue,path) =>{
     console.log("File Names => ",originalValue," to", newValue);
-    shell.exec('cd '+path+' && pwd &&'+__dirname+'/../../node_modules/.bin/renamer --find /'+originalValue+'/i --replace "'+newValue+'" "**"');
+    shell.exec('cd '+path+' &&'+__dirname+'/../../node_modules/.bin/renamer --find /'+originalValue+'/i --replace "'+newValue+'" "**"');
 }
 
 const fileContentReplaceHandler = async (originalValue,newValue,path) =>{
