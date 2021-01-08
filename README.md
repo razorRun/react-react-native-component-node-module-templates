@@ -25,9 +25,9 @@ What this tool does is automate this whole process. You and your team can create
 
 `npm i react-react-native-component-node-module-templates --save-dev`
 
-#### Setup on first time run
+#### Setup on first time
 
-`node node_modules/react-react-native-component-node-module-templates/init.js`
+ run `node node_modules/react-react-native-component-node-module-templates/init.js`
 
 You will notice this will create an entry called `gen` in your package.json and copy a folder to your project root called 
 `developer-templates`. Fell free to edit them as you see needed. 
