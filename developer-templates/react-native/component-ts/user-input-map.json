@@ -1,0 +1,12 @@
+[
+  {
+    "label":"ComponentName",
+    "replacements":[
+      {
+        "replacingText" : "ComponentName",
+        "replacingCaseTypes": 4 ,
+        "replacingLocations": [1,2,3]
+      }
+    ]
+  }
+]

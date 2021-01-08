@@ -1,0 +1,12 @@
+[
+  {
+    "label":"ContainerName",
+    "replacements":[
+      {
+        "replacingText" : "ContainerName",
+        "replacingCaseTypes": 4 ,
+        "replacingLocations": [1,2,3]
+      }
+    ]
+  }
+]
