@@ -16,5 +16,14 @@
   },
   "scripts": {
     "gen": "node index.js"
-  }
+  },
+   "keywords": [
+     "React Component",
+     "React Component Templates",
+     "React Native Component Templates",
+     "js Templates",
+     "react Starters",
+     "js Boilerplates",
+     "react Boilerplates",
+  ]
 }
