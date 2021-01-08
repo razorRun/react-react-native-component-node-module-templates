@@ -11,6 +11,21 @@ Imagine working on a project with more than 100s of react components. how good w
 
 The way I see it is when you work with multiple different teams on different projects, it is always useful to have isolated project standers that can be easily adjustable for the whole team.
 
+####Install
+
+`npm i react-react-native-component-node-module-templates`
+
+####Setup on first time run
+
+`node node_modules/react-react-native-component-node-module-templates/init.js`
+
+You will notice this will crate an entry called `gen` in your package.json and copy a folder to your project root called 
+`developer-templates`. Fell free to edit the as you see needed.  
+
+####To run the generator 
+
+`npm run gen`
+
 See [NPM script to automate tasks in React and other JS Projects](https://roshan.digital/npm-script-to-save-time-react-project/) post for more information.
 
 To Add a new Template 

@@ -19,7 +19,7 @@ const getFolderList = (path) => {
 
 // recursively pick the path to project package.json
 const  locationSelector = async (path)=>{
-    let cPath= path ? path:__dirname;
+    let cPath= path ? path:__dirname+"/../../";
     let folderList = getFolderList(cPath);
     folderList.push({title:"ADD_HERE"},{title:"GO_BACK"});
     const response = await prompts({
@@ -42,11 +42,9 @@ const  locationSelector = async (path)=>{
 
 //prompt user to select tech stack and save it to a config file
 const stackTypeSelector = async (path)=> {
-    path= path ? path:__dirname+"/developer-templates";
-    console.log("stackTypeSelector",path);
-    console.log(__dirname)
+    path= path ? path:__dirname+"/../../developer-templates";
     try {
-        return JSON.parse(fs.readFileSync(__dirname+"developer-templates/config.json")).techStack;
+        return JSON.parse(fs.readFileSync(__dirname+"/../../developer-templates/config.json")).techStack;
     }catch (e) {
         let folderList = getFolderList(path);
         const response = await prompts({
@@ -55,7 +53,7 @@ const stackTypeSelector = async (path)=> {
             message: 'Select your Project stack',
             choices: folderList
         });
-        fs.writeFile ("developer-templates/config.json", JSON.stringify(response), function(err) {
+        fs.writeFile (__dirname+"/../../developer-templates/config.json", JSON.stringify(response), function(err) {
                 if (err) throw err;
                 console.log('Response was saved to /developer-templates/config.json. Delete this file if you want to change it later.');
             }
@@ -68,7 +66,7 @@ const stackTypeSelector = async (path)=> {
 const templateSelector = async (path)=> {
     const techStack = await stackTypeSelector();
     console.log ("Available templates for " +techStack);
-    path = path ? path:__dirname+"/developer-templates/"+techStack;
+    path = path ? path:__dirname+"/../../developer-templates/"+techStack;
     console.log("templateSelector",path)
     let folderList = getFolderList(path);
     const response = await prompts({
@@ -77,7 +75,7 @@ const templateSelector = async (path)=> {
         message: 'Select a template',
         choices: folderList
     });
-    const selectedPath = __dirname+"/developer-templates/"+techStack+"/"+response.templateType;
+    const selectedPath = __dirname+"/../../developer-templates/"+techStack+"/"+response.templateType;
     const templateName = getFolderList(selectedPath)[0].title;
     return [selectedPath,selectedPath+"/"+templateName,templateName];
 }
@@ -119,12 +117,12 @@ const generateTaskList = (userInputRequests,responses) => {
 
 const folderNameReplaceHandler = (originalValue,newValue,path) =>{
     console.log("Folder Names => ",originalValue," to", newValue);
-    shell.exec('cd '+path+' && pwd &&'+__dirname+'/node_modules/.bin/renamer --find /'+originalValue+'/i --replace "'+newValue+'" "**/"');
+    shell.exec('cd '+path+' && pwd &&'+__dirname+'/../../node_modules/.bin/renamer --find /'+originalValue+'/i --replace "'+newValue+'" "**/"');
 }
 
 const fileNameReplaceHandler = (originalValue,newValue,path) =>{
     console.log("File Names => ",originalValue," to", newValue);
-    shell.exec('cd '+path+' && pwd &&'+__dirname+'/node_modules/.bin/renamer --find /'+originalValue+'/i --replace "'+newValue+'" "**"');
+    shell.exec('cd '+path+' && pwd &&'+__dirname+'/../../node_modules/.bin/renamer --find /'+originalValue+'/i --replace "'+newValue+'" "**"');
 }
 
 const fileContentReplaceHandler = async (originalValue,newValue,path) =>{

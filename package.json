@@ -15,7 +15,6 @@
     "shelljs": "^0.8.4"
   },
   "scripts": {
-    "gen": "node index.js",
-    "init": "node init.js"
+    "gen": "node index.js"
   }
 }
