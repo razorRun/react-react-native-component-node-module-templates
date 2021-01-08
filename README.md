@@ -19,7 +19,7 @@ lets say on a react project whenever we create an functional componant we do fol
 
 what this tool does is automate this whole process. you and your team team can create a template you like and this tool will create files with the name you input and replace the content in your template files whenever you create a new module. 
 
-
+![demo](https://github.com/razorRun/react-react-native-component-node-module-templates/blob/main/demo.gif?raw=true)
 
 #### Install
 
