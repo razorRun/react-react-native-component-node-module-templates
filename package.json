@@ -11,7 +11,7 @@
     "npm-add-script": "^1.1.0",
     "prompts": "^2.4.0",
     "renamer": "^2.0.1",
-    "replace-in-files": "^3.0.0",
+    "replace-in-file": "^6.1.0",
     "shelljs": "^0.8.4"
   },
   "scripts": {

@@ -3,7 +3,7 @@ const prompts = require('prompts');
 const ncp = require('ncp').ncp;
 const changeCase = require('change-case');
 const shell = require('shelljs');
-const replaceInFiles = require('replace-in-files');
+const replaceInFile = require('replace-in-file');
 ncp.limit = 16;
 
 let destinationPath = "";
@@ -127,7 +127,7 @@ const fileNameReplaceHandler = (originalValue,newValue,path) =>{
 
 const fileContentReplaceHandler = async (originalValue,newValue,path) =>{
     console.log("File Content => ",originalValue," to", newValue);
-    const data = replaceInFiles({
+    const data = replaceInFile({
         files: path+'/**',
         from: new RegExp(originalValue,"g"),
         to: newValue,
