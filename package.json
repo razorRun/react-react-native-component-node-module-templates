@@ -1,6 +1,6 @@
 {
   "name": "react-react-native-component-node-module-templates",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "index.js",
   "repository": "https://github.com/razorRun/react-react-native-component-node-module-templates",
   "author": "Roshan Milinda",
@@ -17,13 +17,13 @@
   "scripts": {
     "gen": "node index.js"
   },
-   "keywords": [
-     "React Component",
-     "React Component Templates",
-     "React Native Component Templates",
-     "js Templates",
-     "react Starters",
-     "js Boilerplates",
-     "react Boilerplates"
+  "keywords": [
+    "React Component",
+    "React Component Templates",
+    "React Native Component Templates",
+    "js Templates",
+    "react Starters",
+    "js Boilerplates",
+    "react Boilerplates"
   ]
 }
